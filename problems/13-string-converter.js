@@ -13,6 +13,18 @@ console.log(stringConverter("raccoon")); // => {r: 1, a: 1, c: 2, o: 2, n: 1}
 
 function stringConverter(string) {
   // Your code here
+  let converted = {};
+  let split = string.split('');
+
+  split.forEach(function(letter) {
+    if (converted[letter] === undefined) {
+      converted[letter] = 1;
+    } else {
+      converted[letter] += 1;
+    }
+  });
+
+  return converted;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/

@@ -29,6 +29,17 @@ console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 
 function countScores(people) {
   // Your code here
+  let together = {};
+
+  people.forEach(function(person) {
+    if (together[person['name']] === undefined) {
+      together[person['name']] = person['score'];
+    } else {
+      together[person['name']] += person['score'];
+    }
+  });
+
+  return together;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
